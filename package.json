@@ -1,0 +1,18 @@
+{
+  "name": "net.yuleo21.remove-menu-with-parameters",
+  "displayName": "RemoveMenuWithParameters",
+  "version": "1.0.0",
+  "author": {
+    "name": "yuleo21",
+    "url": "https://github.com/yuleo21"
+  },
+  "unity": "2022.3",
+  "description": "A NDMF plugin that removes selected VRChat avatar menu items and their associated parameters at build time.",
+  "vpmDependencies": {
+    "com.vrchat.avatars": ">=3.5.0",
+    "nadena.dev.ndmf": ">=1.5.0"
+  },
+  "legacyFolders": {
+    "Assets\\RemoveMenuWithParameters": ""
+  }
+}
