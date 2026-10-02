@@ -78,6 +78,18 @@ namespace RemoveMenuWithParametersTool
                 EditorUtility.SetDirty(comp);
             }
 
+            EditorGUI.BeginChangeCheck();
+            bool removeLayers = EditorGUILayout.ToggleLeft(
+                new GUIContent("使われなくなった Playable Layer のレイヤーを削除する",
+                    "削除されるパラメーターのみで駆動されているレイヤーを、ビルド時に Playable Layers から取り除きます。"),
+                comp.removeUnusedLayers);
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(comp, "Change Remove Unused Layers");
+                comp.removeUnusedLayers = removeLayers;
+                EditorUtility.SetDirty(comp);
+            }
+
             EditorGUILayout.Space(4);
 
             // ---- 表示モード切替ツールバー ----
@@ -1017,6 +1029,18 @@ namespace RemoveMenuWithParametersTool
                     {
                         Undo.RecordObject(comp, "Change Keep Shared Parameters");
                         comp.keepSharedParameters = keep;
+                        EditorUtility.SetDirty(comp);
+                    }
+
+                    EditorGUI.BeginChangeCheck();
+                    bool removeLayers = EditorGUILayout.ToggleLeft(
+                        new GUIContent("使われなくなった Playable Layer のレイヤーを削除する",
+                            "削除されるパラメーターのみで駆動されているレイヤーを、ビルド時に Playable Layers から取り除きます。"),
+                        comp.removeUnusedLayers);
+                    if (EditorGUI.EndChangeCheck())
+                    {
+                        Undo.RecordObject(comp, "Change Remove Unused Layers");
+                        comp.removeUnusedLayers = removeLayers;
                         EditorUtility.SetDirty(comp);
                     }
 

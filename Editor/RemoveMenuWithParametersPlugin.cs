@@ -99,7 +99,7 @@ namespace RemoveMenuWithParametersTool
             }
 
             // Playable Layers から該当パラメータのみで駆動されているレイヤーを削除
-            if (removedParams.Count > 0)
+            if (setting.removeUnusedLayers && removedParams.Count > 0)
             {
                 RemoveLayersUsedOnlyByParams(ctx, descriptor, removedParams);
             }

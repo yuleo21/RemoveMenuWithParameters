@@ -22,5 +22,10 @@ namespace RemoveMenuWithParametersTool
         /// 削除されずに残るメニュー項目が使っているパラメーターは削除しない。
         /// </summary>
         public bool keepSharedParameters = true;
+
+        /// <summary>
+        /// 削除されたパラメーターのみで駆動されている Playable Layer のレイヤーを削除する。
+        /// </summary>
+        public bool removeUnusedLayers = true;
     }
 }
